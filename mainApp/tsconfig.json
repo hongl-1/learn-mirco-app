@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "mainApp/src/**/*.ts",
+    "mainApp/src/**/*.d.ts",
+    "mainApp/src/**/*.tsx",
+    "mainApp/src/**/*.vue"
+  ],
+  "references": [{ "path": "./tsconfig.node.json"}]
+}
