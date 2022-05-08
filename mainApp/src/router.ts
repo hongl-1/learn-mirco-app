@@ -1,5 +1,5 @@
 import {createRouter, createWebHashHistory, RouteRecordRaw} from "vue-router"
-import MyPage from './components/my-page.vue'
+import ViteVuePage from './components/my-page.vue'
 import Test from './components/test.vue'
 
 const routes: RouteRecordRaw[] = [
@@ -12,7 +12,7 @@ const routes: RouteRecordRaw[] = [
     // 👇 非严格匹配，/my-page/* 都指向 MyPage 页面
     path: '/my-page/:page*', // vue-router@4.x path的写法为：'/my-page/:page*'
     name: 'my-page',
-    component: MyPage,
+    component: ViteVuePage,
   }
 ]
 
