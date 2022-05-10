@@ -6,6 +6,10 @@
   </div>
 </template>
 
+<script>
+export default {}
+</script>
+
 <style>
 .test-btn-vite {
   height: 40px;
