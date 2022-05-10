@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 // console.log(router)
-import microApp from '@micro-zoe/micro-app'
+import microApp, { EventCenterForMicroApp } from '@micro-zoe/micro-app'
 microApp.start({
   lifeCycles: {
     created() {
@@ -23,7 +23,7 @@ microApp.start({
   },
   plugins: {
     modules: {
-      vite: [{
+      vueVite: [{
         loader(code: string) {
           if (process.env.NODE_ENV === 'development') {
             code = code.replace(/(from|import)(\s*['"])(\/micro-app\/vite\/)/g, (all) => {
@@ -60,6 +60,12 @@ microApp.start({
     })
   }
 })
+microApp.setGlobalData({type: '全局数据'})
+microApp.setData('vueVite', {a: '这是发向vueVite应用的定向数据'})
+microApp.setData('vue2Webpack', {a: '这是发向vue2Webpack应用的定向数据'})
+window.eventCenterForAppVite = new EventCenterForMicroApp('vueVite')
+// window.eventCenterForAppVite.setData('vueVite', {a: '这是发向vite应用的定向数据'})
+// window.eventCenterForAppVite.setGlobalData({a: '这是来自基座应用的全局数据'})
 const app = createApp(App)
 app.use(router)
 app.mount('#app')

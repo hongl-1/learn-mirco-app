@@ -1,0 +1,20 @@
+{
+  "name": "learn-mirco-app-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongl-1/learn-mirco-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hongl-1/learn-mirco-app/issues"
+  },
+  "homepage": "https://github.com/hongl-1/learn-mirco-app#readme"
+}

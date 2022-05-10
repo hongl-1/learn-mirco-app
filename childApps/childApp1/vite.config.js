@@ -3,9 +3,6 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [
-    // legacy({
-    //   targets: ['Chrome >= 59']
-    // }),
     vue(),
     (function () {
       let basePath = ''

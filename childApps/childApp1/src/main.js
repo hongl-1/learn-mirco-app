@@ -17,7 +17,6 @@ const routes = [
 // const app = createApp(App)
 // app.use(router)
 // app.mount('#vite-app')
-
 let app = null
 let router = null
 let history = null
@@ -66,6 +65,7 @@ function unmount () {
 // 微前端环境下，注册mount和unmount方法
 if (window.__MICRO_APP_BASE_APPLICATION__) {
   window['micro-app-vite'] = { mount, unmount }
+  mount()
 } else {
   // 非微前端环境直接渲染
   mount()

@@ -1,7 +1,7 @@
 <template>
   <div class="vite">
     <micro-app
-      name='vite'
+      name='vueVite'
       url='http://localhost:3001/micro-app/vite/'
       inline
       disableSandbox
