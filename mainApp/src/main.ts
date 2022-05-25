@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 // console.log(router)
 import microApp, { EventCenterForMicroApp } from '@micro-zoe/micro-app'
+
 microApp.start({
   lifeCycles: {
     created() {
@@ -27,7 +28,7 @@ microApp.start({
         loader(code: string) {
           if (process.env.NODE_ENV === 'development') {
             code = code.replace(/(from|import)(\s*['"])(\/micro-app\/vite\/)/g, (all) => {
-              return all.replace('/micro-app/vite/', 'http://localhost:3001/micro-app/vite/')
+              return all.replace('/micro-app/vite/', 'http://localhost:5001/micro-app/vite/')
             })
           }
           return code
@@ -41,26 +42,9 @@ microApp.start({
    * @param options fetch请求配置项
    * @returns Promise<string>
    */
-  fetch(url: string, options: any, appName: string) {
-    if (url === 'http://localhost:3001/error.js') {
-      return Promise.resolve('')
-    }
-
-    let config = null
-    if (url === 'http://localhost:3001/micro-app/react16/') {
-      config = {
-        headers: {
-          'custom-head': 'custom-head',
-        }
-      }
-    }
-
-    return fetch(url, Object.assign(options, config)).then((res) => {
-      return res.text()
-    })
-  }
 })
-microApp.setGlobalData({type: '全局数据'})
+// microApp.setGlobalData({type: '全局数据'})
+microApp.setGlobalData({cookie: 'JSESSIONID=uu0BeRhuY7BIXBMcFth17etmKa48gP0NfDyHQ8Hy; centerToken=6459ebe1-8487-4fe4-ba78-82601408129d'})
 microApp.setData('vueVite', {a: '这是发向vueVite应用的定向数据'})
 microApp.setData('vue2Webpack', {a: '这是发向vue2Webpack应用的定向数据'})
 window.eventCenterForAppVite = new EventCenterForMicroApp('vueVite')

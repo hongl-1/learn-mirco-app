@@ -2,7 +2,7 @@
   <div class="vite">
     <micro-app
       name='vue2Webpack'
-      url='http://localhost:3002'
+      url='http://localhost:5002'
       baseroute='/vue2Webpack'
     >
       <!-- destroy inline scopecss='false' -->

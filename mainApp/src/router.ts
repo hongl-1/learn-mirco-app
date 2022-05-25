@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from "vue-router"
 import ViteVuePage from './components/vueVite.vue'
 import vue2Webpack from './components/vue2Webpack.vue'
+import lowcode from './components/lowcode.vue'
 import Test from './components/test.vue'
 
 const routes: RouteRecordRaw[] = [
@@ -20,6 +21,12 @@ const routes: RouteRecordRaw[] = [
     path: '/vue2Webpack/:page*', // vue-router@4.x path的写法为：'/my-page/:page*'
     name: 'vue2Webpack',
     component: vue2Webpack,
+  },
+  {
+    // 👇 非严格匹配，/my-page/* 都指向 MyPage 页面
+    path: '/lowcode/:page*', // vue-router@4.x path的写法为：'/my-page/:page*'
+    name: 'lowcode',
+    component: lowcode,
   }
 ]
 

@@ -3,6 +3,6 @@ module.exports = {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    port: 3002
+    port: 5002
   },
 }

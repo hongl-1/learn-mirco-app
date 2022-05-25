@@ -1,10 +1,9 @@
 <template>
-  <div class="vite">
+  <div class="lowcode">
     <micro-app
-      name='vueVite'
-      url='http://localhost:5001/micro-app/vite/'
-      inline
-      disableSandbox
+      name='lowcode'
+      url='http://localhost:5003'
+      baseroute='/lowcode'
     >
       <!-- destroy inline scopecss='false' -->
     </micro-app>

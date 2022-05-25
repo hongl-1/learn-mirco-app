@@ -12,6 +12,7 @@ function changePage(page) {
 <template>
   <button @click="changePage('/vueVite')">vueVite</button>
   <button @click="changePage('/vue2Webpack')">vue2Webpack</button>
+  <button @click="changePage('/lowcode')">lowcode</button>
   <router-view />
 </template>
 
