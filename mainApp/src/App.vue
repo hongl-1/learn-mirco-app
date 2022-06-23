@@ -1,28 +1,51 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-import { useRouter } from 'vue-router'
-const router = useRouter()
-function changePage(page) {
-  router.push(page)
-}
-</script>
-
 <template>
-  <button @click="changePage('/vueVite')">vueVite</button>
-  <button @click="changePage('/vue2Webpack')">vue2Webpack</button>
-  <button @click="changePage('/lowcode')">lowcode</button>
-  <router-view />
+  <div class="micro-wrap">
+    <router-view />
+    <div class="change-buttons">
+      <img class="icon" src="@/assets/setting.png" alt="">
+      <a-button type="primary" class="btn" @click="changePage('/lowcode')">lowcode</a-button>
+      <a-button type="primary" class="btn" @click="changePage('/poi')">poi</a-button>
+    </div>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script lang="ts" setup>
+import { useRoute, useRouter } from 'vue-router'
+import { computed, ref } from 'vue'
+
+const router = useRouter()
+const route = useRoute()
+
+function changePage(page: string) {
+  router.push(page)
+}
+
+</script>
+
+<style lang="less" scoped>
+.micro-wrap {
+  .change-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    top: 50vh;
+    right: -162px;
+    //background-color: #fff;
+    transition-duration: 300ms;
+    &:hover {
+      right: 0;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+    }
+    .btn {
+      width: 80px;
+      height: 30px;
+      margin-left: 2px;
+    }
+  }
 }
 </style>

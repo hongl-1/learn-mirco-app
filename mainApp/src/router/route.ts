@@ -1,12 +1,12 @@
-import { createRouter, createWebHashHistory, createWebHistory, RouteRecordRaw } from "vue-router"
-import ViteVuePage from './components/vueVite.vue'
-import vue2Webpack from './components/vue2Webpack.vue'
-import lowcode from './components/lowcode.vue'
-import poi from './components/poiInfo.vue'
-import home from './components/home.vue'
-import login from './components/login.vue'
+import ViteVuePage from '@/components/vueVite.vue'
+import vue2Webpack from '@/components/vue2Webpack.vue'
+import lowcode from '@/microChildren/lowcode.vue'
+import poi from '@/microChildren/poiInfo.vue'
+import home from '@/components/home.vue'
+import login from '@/views/login/index.vue'
+import { RouteRecordRaw } from 'vue-router'
 
-const routes: RouteRecordRaw[] = [
+export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'index',
@@ -42,10 +42,3 @@ const routes: RouteRecordRaw[] = [
     component: poi,
   }
 ]
-
-const router = createRouter({
-  history: createWebHistory('index'),
-  routes
-})
-
-export default router

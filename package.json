@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/hongl-1/learn-mirco-app/issues"
   },
-  "homepage": "https://github.com/hongl-1/learn-mirco-app#readme"
+  "homepage": "https://github.com/hongl-1/learn-mirco-app#readme",
+  "devDependencies": {
+    "connect-history-api-fallback": "^1.6.0"
+  },
+  "dependencies": {
+    "ant-design-vue": "^3.2.6"
+  }
 }

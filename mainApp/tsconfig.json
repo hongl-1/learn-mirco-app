@@ -11,10 +11,17 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      // 根据别名配置相关路径
+      "@/*": ["./src/*"],
+      "~api/*": ["./src/api/modules/*"]
+    }
   },
   "include": [
     "mainApp/src/**/*.ts",
+    "src/**/*.vue",
+    "src/**/*.ts",
     "mainApp/src/**/*.d.ts",
     "mainApp/src/**/*.tsx",
     "mainApp/src/**/*.vue"
